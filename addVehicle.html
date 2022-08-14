@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body onload="addDropdown();updateDatatoFormVehicle();">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link align-middle px-0">
+                                <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./addScenario.html" class="nav-link px-0 align-middle">
+                                <span class="ms-1 d-none d-sm-inline">Add Scenario</span></a>
+                        </li>
+                        <li>
+                            <a href="./allScenarios.html" class="nav-link px-0 align-middle">
+                                <span class="ms-1 d-none d-sm-inline">All Scenarios</span></a>
+                        </li>
+                        <li>
+                            <a href="./addVehicle.html" class="nav-link px-0 align-middle">
+                                <span class="ms-1 d-none d-sm-inline">Add Vehicle</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col bg-light">
+                <br>
+                <p style="color: red;">From Add scenerio</p>
+                <form name="vehicleform" onsubmit="return validateForm()">
+                    <div class=" form form-row">
+                        <div class="col-6">
+                            <label for="sceneList">Scenario List</label>
+                            <select name="sceneList" class="form-control" id="sceneList"></select>
+                        </div>
+                        <br>
+                        <div class="col-6">
+                            <label for="vehicleName">Vehicle Name</label>
+                            <input type="text" name="vehicleName" class="form-control" id="vehicleName" required>
+                        </div>
+                        <br>
+                        <div class="col-6">
+                            <label for="speed">Speed</label>
+                            <input type="text" name="speed" class="form-control" id="speed" required>
+                        </div>
+                        <br>
+                        <div class="col-6">
+                            <label for="positionX">Postion X</label>
+                            <input type="text" name="positionX" class="form-control" id="positionX" required>
+                        </div>
+                        
+                        <br>
+                        <div class="col-6">
+                            <label for="positionY">Position Y</label>
+                            <input type="text" name="positionY" class="form-control" id="positionY" required>
+                        </div>
+                        <br>
+                        <div class="col-6">
+                            <label for="direction">Direction</label>
+                            <select name="direction" class="form-control" id="direction">
+                                <option value="towards">Towards</option>
+                                <option value="backwards">Backwards</option>
+                                <option value="upwards">Upwards</option>
+                                <option value="downwards">Downwards</option>
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success" onclick="addVehicle()">Add</button>
+                        <button type="submit" class="btn btn-warning">Reset</button>
+                        <button type="submit" class="btn btn-primary">Go Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
